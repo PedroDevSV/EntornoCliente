@@ -1,0 +1,38 @@
+*{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000000;
+}
+
+nav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#titulo{
+    color: #fff;
+}
+body{
+    margin: 0;
+    background-color: rgb(11, 11, 11);
+}
+
+
+.principalContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* Viewport heigh, altura de dispositivo */
+    height: 100vh; 
+    
+}
+
+.calculadora{
+    display: grid;
+    grid-template-columns: 75px 75px 75px 75px;
+    grid-template-rows: 110px 75px 75px 75px 75px;
+    padding: 15px;
+    border-radius: 32px;
+    box-shadow: 2px 2px 5px 2px #aba8a8;
+}
