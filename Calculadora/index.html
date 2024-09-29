@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/styless.css" rel="stylesheet">
-    <title>Calculator</title>
-       <!-- <nav>
-      <h1 id="titulo">Calcúlame esta</h1>
-   </nav> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/icon">
    
+    <title>Calculator</title>
+    <script src="assets/script.js"></script>
  </head>
+
  <body>
 
    <div class="principalContainer">
@@ -18,31 +21,32 @@
          <!-- Pantalla de las operaciones -->
           <div class="display">
             <!-- disabled para que no se pueda escribir -->
-             <input type="text" class="calculator-screen" value="" disabled/>
+             <input type="text" id="pantalla" class="calculator-screen" value="0" disabled/>
           </div>
+
           <div class="botones">
             <!-- Botones funcionales para borrar -->
             <button class="limpiar">C</button>
             <button class="borrar"><--</button> <!--Solo un caracter-->
             
             <!-- Numeros y operadores -->
-            <button class="numero">.</button>
-            <button class="operador" value="dividir">%</button>
-            <button class="numero">7</button>
-            <button class="numero">8</button>
-            <button class="numero">9</button>
-            <button class="operador" value="multiplicar">X</button>
-            <button class="numero">4</button>
-            <button class="numero">5</button>
-            <button class="numero">6</button>
-            <button class="operador" value="restar">-</button>
-            <button class="numero">1</button>
-            <button class="numero">2</button>
-            <button class="numero">3</button>
-            <button class="operador" value="sumar">+</button>
-            <button class="igual" value="igual">=</button>
-            <button class="numero">0</button>
-         </div>
+            <button id="punto" class="numero">.</button>
+            <button id="dividir" class="operador" value="dividir">%</button>
+            <button id="siete" class="numero">7</button>
+            <button id="ocho" class="numero">8</button>
+            <button id="nueve" class="numero" onclick="darValor(9)">9</button>
+            <button id="multi" class="operador" value="multiplicar">X</button>
+            <button id="cuatro" class="numero">4</button>
+            <button id="cinco" class="numero">5</button>
+            <button id="seis" class="numero">6</button>
+            <button id="restar" class="operador" value="restar">-</button>
+            <button id="uno" class="numero">1</button>
+            <button id="dos" class="numero">2</button>
+            <button id="tres" class="numero">3</button>
+            <button id="sumar" class="operador" value="sumar">+</button>
+            <button id="igual" class="igual" value="igual">=</button>
+            <button id="cero" class="numero">0</button>
+         </div>      
       </div>
   </div>
  </body>
