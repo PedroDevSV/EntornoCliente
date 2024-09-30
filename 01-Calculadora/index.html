@@ -11,10 +11,7 @@
     <link rel="icon" href="assets/img/favicon.ico" type="image/icon">
    
     <title>Calculator</title>
-    <script src="assets/script.js"></script>
-    
  </head>
-
  <body>
    <nav>
       <div id="elementos-nav">
@@ -30,20 +27,20 @@
          <!-- Pantalla de las operaciones -->
           <div class="display">
             <!-- disabled para que no se pueda escribir -->
-             <input type="text" id="pantalla" class="calculator-screen" value="0" disabled/>
+             <input type="text" id="pantalla" class="calculator-screen" value="0" />
           </div>
 
           <div class="botones">
             <!-- Botones funcionales para borrar -->
             <button class="limpiar">C</button>
-            <button class="borrar"><--</button> <!--Solo un caracter-->
+            <button class="borrar">↩</button> <!--Solo un caracter-->
             
             <!-- Numeros y operadores -->
             <button id="punto" class="numero">.</button>
             <button id="dividir" class="operador" value="dividir">%</button>
             <button id="siete" class="numero">7</button>
             <button id="ocho" class="numero">8</button>
-            <button id="nueve" class="numero" onclick="darValor(9)">9</button>
+            <button id="nueve" class="numero" onclick="darValor('9')">9</button>
             <button id="multi" class="operador" value="multiplicar">X</button>
             <button id="cuatro" class="numero">4</button>
             <button id="cinco" class="numero">5</button>
@@ -53,10 +50,12 @@
             <button id="dos" class="numero">2</button>
             <button id="tres" class="numero">3</button>
             <button id="sumar" class="operador" value="sumar">+</button>
-            <button id="igual" class="igual" value="igual">=</button>
             <button id="cero" class="numero">0</button>
+            <button id="igual" class="igual" value="igual">=</button>
          </div>      
       </div>
   </div>
+  
+  <script src="assets/script.js"></script>
  </body>
  </html>

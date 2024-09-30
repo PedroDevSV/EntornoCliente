@@ -1,3 +1,8 @@
+/* Guardamos variables con los colores */
+:root{
+    --fondoCalc: #089ca7d3;
+}
+
 *{
     font-family: Orbitron;
     color: #000000;
@@ -33,22 +38,24 @@
     margin-left: 4%;
 }
 
+.display{
+    background-color: var(--fondoCalc);
+}
 .principalContainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    
 }
 
 .calculadora{
     display: flex;
     flex-direction: column;
-    align-items: center;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     width: 320px;
-    background-color: #fff;
+    background-color: var(--fondoCalc);
 
 }
 
@@ -66,7 +73,7 @@
     grid-template-columns: repeat(4,1fr); 
     gap: 10px;
     margin-top: 3vh;
-    
+    background-color: var(--fondoCalc);
 }
 
 button{
@@ -76,18 +83,23 @@ button{
     font-size: 20px;
     border-radius: 5px;
     border: none;
-    background-color: #ddd4d4;
+    background-color: #b3b3b3;
     cursor: pointer;
-   
+    
+}
+/* Pulsaciones */
+button:active{
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .operador{
-    background-color: #f57c00;
+    background-color: #fac42e;
 
 }
 
 .igual{
-    height:135px;
+    background-color: #ffffff;
 }
 .limpiar{
     background-color: rgb(181, 27, 27);

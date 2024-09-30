@@ -1,6 +1,6 @@
 //Definimos variables 
 
-console.log('Juan imbec cil');
+
 const uno     = document.getElementById("uno"),
       dos     = document.getElementById("dos"),
       tres    = document.getElementById("tres"),
@@ -16,19 +16,21 @@ const suma    = document.getElementById("suma"),
       resta   = document.getElementById("resta"),
       dividir = document.getElementById("dividir"),
       igual   = document.getElementById("igual"),
-      multi   = document.getElementById(),
+      multi   = document.getElementById("multi"),
       punto   = document.getElementById("punto");
 
-let puntosScreen = document.getElementById('pantalla');
+const puntosScreen = document.getElementById("pantalla");
 
 
 //  FUnciones 
-const darValor = (num) => {
+const darValor = () => {
+    
     // if (puntosScreen == '0')
-        puntosScreen= num;
+    
+    puntosScreen.value += 'hola';
     // else 
     //     puntosScreen+='num';
-    puntosScreen.value = num;
+    console.log('Juan imbec cil');
 };
 
 console.log({puntosScreen});
