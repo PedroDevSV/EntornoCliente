@@ -2,17 +2,37 @@
  <!DOCTYPE html>
  <html lang="es">
  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/styless.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/icon">
-   
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="assets/styless.css" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+   <link rel="icon" href="assets/img/favicon.ico" type="image/icon">
+   <!-- <link  href="assets/loading.css" rel="stylesheet"> -->
     <title>Calculator</title>
  </head>
  <body>
+
+   <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+      <div class="wheel"></div>
+      <div class="hamster">
+         <div class="hamster__body">
+            <div class="hamster__head">
+               <div class="hamster__ear"></div>
+               <div class="hamster__eye"></div>
+               <div class="hamster__nose"></div>
+            </div>
+            <div class="hamster__limb hamster__limb--fr"></div>
+            <div class="hamster__limb hamster__limb--fl"></div>
+            <div class="hamster__limb hamster__limb--br"></div>
+            <div class="hamster__limb hamster__limb--bl"></div>
+            <div class="hamster__tail"></div>
+         </div>
+      </div>
+      <div class="spoke"></div>
+   </div>
+
    <nav>
       <div id="elementos-nav">
          <div id="logo-nombre">
@@ -22,6 +42,7 @@
          <h2 id="titulo">Calculator</h2>
       </div>
    </nav>
+
    <div class="principalContainer">
       <div class="calculadora">
          <!-- Pantalla de las operaciones -->

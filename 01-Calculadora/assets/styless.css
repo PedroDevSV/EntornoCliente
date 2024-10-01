@@ -1,6 +1,7 @@
 /* Guardamos variables con los colores */
 :root{
     --fondoCalc: #089ca7d3;
+    --fondoPag:  #414141;
 }
 
 *{
@@ -8,13 +9,12 @@
     color: #000000;
     font-weight: 600;
     font-size: 2.5vh;
-    background-color: #ffffff;
+    /* background-color: var(--fondoPag); */
 }
 
- nav{
+nav{
     background-color: transparent;
     padding: 5px;
-    
 } 
 
 #elementos-nav{
@@ -32,6 +32,7 @@
     margin-right: 80%;
     margin-left:auto;
     align-items: center;
+    color: gainsboro;
 }
 
 #sv{
@@ -104,3 +105,5 @@ button:active{
 .limpiar{
     background-color: rgb(181, 27, 27);
 }
+
+/* wsrgsr */
