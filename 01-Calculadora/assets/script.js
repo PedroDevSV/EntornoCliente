@@ -1,4 +1,5 @@
 //Definimos variables 
+alert("PROYECTO EN OBRAS\nVictor ponme un 10 por el diseño")
 
 const uno     = document.getElementById("uno"),
       dos     = document.getElementById("dos"),
@@ -26,10 +27,9 @@ const darValor = () => {
     
     // if (puntosScreen == '0')
     
-    puntosScreen.value += 'hola';
+    puntosScreen.value += 'hola Victor';
     // else 
     //     puntosScreen+='num';
-    console.log('Juan imbec cil');
 };
 
 console.log({puntosScreen});
