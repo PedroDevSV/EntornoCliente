@@ -1,6 +1,5 @@
 //Definimos variables 
 
-
 const uno     = document.getElementById("uno"),
       dos     = document.getElementById("dos"),
       tres    = document.getElementById("tres"),
