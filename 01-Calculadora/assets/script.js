@@ -1,38 +1,39 @@
 //Definimos variables 
-alert("PROYECTO EN OBRAS\nVictor ponme un 10 por el diseño")
 
-const uno     = document.getElementById("uno"),
-      dos     = document.getElementById("dos"),
-      tres    = document.getElementById("tres"),
-      cuatro  = document.getElementById("cuatro"), 
-      cinco   = document.getElementById("cinco"), 
-      seis    = document.getElementById("seis"), 
-      siete   = document.getElementById("siete"), 
-      ocho    = document.getElementById("ocho"), 
-      nueve   = document.getElementById('nueve'), 
-      cero    = document.getElementById("cero"); 
 
-const suma    = document.getElementById("suma"),
-      resta   = document.getElementById("resta"),
-      dividir = document.getElementById("dividir"),
-      igual   = document.getElementById("igual"),
-      multi   = document.getElementById("multi"),
-      punto   = document.getElementById("punto");
+const uno     = document.querySelector('#uno'),
+      dos     = document.querySelector('#dos'),
+      tres    = document.querySelector('#tres'),
+      cuatro  = document.querySelector('#cuatro'), 
+      cinco   = document.querySelector('#cinco'), 
+      seis    = document.querySelector('#seis'), 
+      siete   = document.querySelector('#siete'), 
+      ocho    = document.querySelector('#ocho'), 
+      nueve   = document.querySelector('#nueve'), 
+      cero    = document.querySelector('#cero');
+    
+const suma    = document.querySelector('#suma'),
+      resta   = document.querySelector('#resta'),
+      dividir = document.querySelector('#dividir'),
+      igual   = document.querySelector('#igual'),
+      multi   = document.querySelector('#multi'),
+      punto   = document.querySelector('#punto');
 
-const puntosScreen = document.getElementById("pantalla");
-
+let puntosScreen = document.querySelector('#pantalla');
 
 //  FUnciones 
-const darValor = () => {
-    
-    // if (puntosScreen == '0')
-    
-    puntosScreen.value += 'hola Victor';
-    // else 
-    //     puntosScreen+='num';
+const darValor = (num) => {
+    if (puntosScreen.value == '0'){
+        puntosScreen.value = num;
+    }else{
+        puntosScreen.value += num;
+    } 
+    // Comprobar que no hay operadores
 };
 
-console.log({puntosScreen});
+const borrarTodo = () =>{
+    puntosScreen.value = '0';
+}
 
 
 
