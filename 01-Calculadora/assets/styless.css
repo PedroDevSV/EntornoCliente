@@ -99,9 +99,16 @@ button:active{
 
 }
 
+#punto{
+    background-color: #ffff;
+}
 .igual{
     background-color: #ffffff;
+    grid-column: span 2;
+    width: 93%;
 }
+
+
 .limpiar{
     background-color: rgb(181, 27, 27);
 }
