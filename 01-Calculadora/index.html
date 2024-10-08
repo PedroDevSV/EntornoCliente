@@ -12,16 +12,16 @@
    <!-- <link  href="assets/loading.css" rel="stylesheet"> -->
     <title>Calculator</title>
  </head>
- <body>
+ <body class="cuerpo">
    
    <!-- Navegador -->
    <nav>
       <div id="elementos-nav">
          <div id="logo-nombre">
-            <img src="assets/img/logo-s128.png" id="logo" alt="logo">
-            <h2 id="sv">DEV SYSTEMS</h2>
+            <a href="https://pedro-sandoval.es" target="_blank"><img src="assets/img/logob.png" id="logo" alt="logo"></a>
+            <h1 id="sv">SYSTEMS</h1>
          </div>
-         <h2 id="titulo">Calculator</h2>
+        
       </div>
    </nav>
 <!-- Cuerpo de la app -->
@@ -29,34 +29,45 @@
       <div class="calculadora">
          <!-- Pantalla de las operaciones -->
          <div class="display">
+            <div class="elInput">
              <!-- disabled para que no se pueda escribir -->
-             <input type="text" id="pantalla" class="calculator-screen" value="0">
+               <input type="text" id="pantalla" class="calculator-screen" value="0" readonly>
+            </div>
          </div>
             
          <div class="botones">
             <!-- Botones funcionales para borrar -->
             <button class="limpiar" onclick="borrarTodo()">C</button>
-            <button class="borrar">↩</button> <!--Solo un caracter-->
+            <button class="backspace" onclick="borrarUlt()">↩</button> <!--Solo un caracter-->
             
-            <!-- Numeros y operadores -->
-            <button id="punto"   class = "punto" value= "punto" >.</button>
-            <button id="dividir" class = "operador" onclick="añadirOperar('/')">/</button>
+           
+            <button id="punto"   class = "punto" onclick="añadirDecimal()">.</button>
+            <button id="modulo"  class = "operador" onclick="añadirOperar('%')">%</button>
+            
+            <!-- Parentesis -->
+            <button id="abreParentesis" class="parentesis" onclick="abrirParentesis()">(</button>
+            <button id="cierraParentesis" class="parentesis" onclick="cierraParentesis()">)</button>
+            
+            <!-- Guardar y pegar -->
+            <button id="guardar" class="guardar" onclick="guardar()">G</button>
+            <button id="pegar" class="pegar" onclick="pegar()">P</button>
+
             <button id="siete"   class = "numero" onclick="darValor(7)">7</button>
             <button id="ocho"    class = "numero" onclick="darValor(8)">8</button>
             <button id="nueve"   class = "numero" onclick="darValor(9)">9</button>
-            <button id="multi"   class = "operador" onclick="añadirOperar('*')">X</button>
+            <button id="dividir" class = "operador" onclick="añadirOperar('/')">/</button>
             <button id="cuatro"  class = "numero" onclick="darValor(4)">4</button>
             <button id="cinco"   class = "numero" onclick="darValor(5)">5</button>
             <button id="seis"    class = "numero" onclick="darValor(6)">6</button>
-            <button id="restar"  class = "operador" onclick="añadirOperar('-')">-</button>
+            <button id="multi"   class = "operador" onclick="añadirOperar('*')">X</button>
             <button id="uno"     class = "numero" onclick="darValor(1)">1</button>
             <button id="dos"     class = "numero" onclick="darValor(2)">2</button>
             <button id="tres"    class = "numero" onclick="darValor(3)">3</button>
             <button id="sumar"   class = "operador" onclick="añadirOperar('+')">+</button>
             <button id="cero"    class = "numero" onclick="darValor(0)">0</button>
             <button id="igual"   class = "igual" onclick="calcular()">=</button>
-            <button id="modulo"  class = "operador" onclick="añadirOperar('%')">%</button>
-
+            <button id="restar"  class = "operador" onclick="añadirOperar('-')">-</button>
+            
          </div>      
       </div>
    </div>
