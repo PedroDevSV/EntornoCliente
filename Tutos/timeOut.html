@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+
+		<h1>Time Out</h1>
+		<p id="holaTimeOut"> </p>
+		<p id="holaInterval"> </p>
+		<script>
+			// SET TIME OUT
+			// La funcion date guarda fechas y horas estáticas
+			// La función setTimeout ejecuta una función después de un tiempo determinado
+
+			const saludoTimeOut = function () {
+				// saludamos en la página
+				document.getElementById("holaTimeOut").innerText = "Hola";
+				
+			};
+            // va a saludar en 5 segundos
+			setTimeout(saludoTimeOut(), 5000);
+
+			// Interval, como el timeout pero se ejecutan continuamente
+
+			const saludoInterval = () => {
+				// saludamos en la página
+				document.getElementById("holaInterval").innerText += "Hola";
+			};
+
+            // va a saludar en 5 segundos
+			setInterval(saludoInterval(), 1000);
+
+			saludoTimeOut();
+			saludoInterval();
+
+		</script>
+	</body>
+</html>
+

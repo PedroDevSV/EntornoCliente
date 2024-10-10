@@ -1,0 +1,77 @@
+<!-- hacer calculadora guapa -->
+ <!DOCTYPE html>
+ <html lang="es">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="assets/styless.css" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+   <link rel="icon" href="assets/img/favicon.ico" type="image/icon">
+   <!-- <link  href="assets/loading.css" rel="stylesheet"> -->
+    <title>Calculator</title>
+ </head>
+ <body class="cuerpo">
+   
+   <!-- Navegador -->
+   <nav>
+      <div id="elementos-nav">
+         <div id="logo-nombre">
+            <a href="https://pedro-sandoval.es" target="_blank"><img src="assets/img/logoSinFondo.png" id="logo" alt="logo"></a>
+            <h1 id="sv">SYSTEMS</h1>
+         </div>
+        
+      </div>
+   </nav>
+<!-- Cuerpo de la app -->
+   <div class="principalContainer">
+      <div class="calculadora">
+         <!-- Pantalla de las operaciones -->
+         <div class="display">
+            <div class="elInput">
+             <!-- disabled para que no se pueda escribir -->
+               <input type="text" id="pantalla" class="calculator-screen" value="0" readonly>
+            </div>
+         </div>
+            
+         <div class="botones">
+            <!-- Botones funcionales para borrar -->
+            <button class="limpiar" onclick="borrarTodo()">C</button>
+            <button class="backspace" onclick="borrarUlt()">⬅</button> <!--Solo un caracter-->
+            
+           
+            <button id="punto"   class = "punto" onclick="añadirDecimal()">.</button>
+            <button id="modulo"  class = "operador" onclick="añadirOperar('%')">%</button>
+            
+            <!-- Parentesis -->
+            <button id="abreParentesis" class="parentesis" onclick="abrirParentesis()">(</button>
+            <button id="cierraParentesis" class="parentesis" onclick="cierraParentesis()">)</button>
+            
+            <!-- Guardar y pegar -->
+            <button id="guardar" class="guardarPegar" onclick="guardar()">G</button>
+            <button id="pegar" class="guardarPegar" onclick="pegar()">P</button>
+            
+            <button id="siete"   class = "numero" onclick="darValor(7)">7</button>
+            <button id="ocho"    class = "numero" onclick="darValor(8)">8</button>
+            <button id="nueve"   class = "numero" onclick="darValor(9)">9</button>
+            <button id="dividir" class = "operador" onclick="añadirOperar('/')">/</button>
+            <button id="cuatro"  class = "numero" onclick="darValor(4)">4</button>
+            <button id="cinco"   class = "numero" onclick="darValor(5)">5</button>
+            <button id="seis"    class = "numero" onclick="darValor(6)">6</button>
+            <button id="multi"   class = "operador" onclick="añadirOperar('*')">X</button>
+            <button id="uno"     class = "numero" onclick="darValor(1)">1</button>
+            <button id="dos"     class = "numero" onclick="darValor(2)">2</button>
+            <button id="tres"    class = "numero" onclick="darValor(3)">3</button>
+            <button id="sumar"   class = "operador" onclick="añadirOperar('+')">+</button>
+            <button id="cero"    class = "numero" onclick="darValor(0)">0</button>
+            <button id="igual"   class = "igual" onclick="calcular()">=</button>
+            <button id="restar"  class = "operador" onclick="añadirOperar('-')">-</button>
+            
+         </div>      
+      </div>
+   </div>
+   <script src="assets/script.js"></script>
+   
+</body>
+</html>
