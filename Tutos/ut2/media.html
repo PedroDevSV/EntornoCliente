@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Para pedir cosas, con el prompt
+        // parse para convertir a num
+        let num = parseInt(prompt("Ingrese un numero: "));
+        let suma = 0,conta = 0;
+        while(num >= 0){
+            suma += num;
+            conta++;
+            num = parseInt(prompt("Ingrese otro numero: "));
+            console.log(suma);
+            console.log(conta);
+        }
+
+        alert("El total es: " + suma + " y la media es: " + suma/conta);
+
+    </script>
+</body>
+</html>
