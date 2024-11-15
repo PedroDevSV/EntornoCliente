@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" name="" id="textoAcifrar">
+    <input type="number" name="" id="palabraClave">
+    <button onclick="cifrar()">Cifrar</button>
+    <p id="resultado"></p>
+    <script>
+       
+        function cifrar() {
+            
+            let texto = document.getElementById('textoAcifrar').value;
+            let clave = document.getElementById('palabraClave').value;
+            
+            let resultado = '';
+            
+            for (let i = 0; i < texto.length; i++) {
+                // Obtener el código del carácter actual
+                let charCode = texto.charCodeAt(i);
+                // Obtener el desplazamiento de la clave
+                let shift = parseInt(clave[i % clave.length]);
+                // Añadir el carácter cifrado al resultado
+                resultado += String.fromCharCode(charCode + shift);
+            }
+            
+            document.getElementById('resultado').innerText = resultado;
+        }
+      
+    </script>
+</body>
+</html>

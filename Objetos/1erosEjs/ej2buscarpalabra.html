@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" name="" id="texto">
+    <input type="text" name="" id="palabra">
+    <button onclick="buscar()">Buscar</button>
+    <p id="resultado1"></p>
+    <script>
+        function buscar(){
+            let texto = document.getElementById("texto").value.toLowerCase();
+            let palabra = document.getElementById("palabra").value.toLowerCase();
+            let count = 0;
+            let palabras = texto.split(/\s+/);
+            palabras.forEach(element => {
+                if (element == palabra) {
+                    count++;
+                }
+            });
+            document.getElementById("resultado1").innerText = `La palabra aparece ${count} veces.`;
+        }
+    </script>
+</body>
+</html>

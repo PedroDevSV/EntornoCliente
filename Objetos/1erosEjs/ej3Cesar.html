@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" name="" id="textoAcifrar">
+    <input type="number" name="" id="codigo">
+    <button onclick="cifrarCesar()">Buscar</button>
+    <p id="resultado"></p>
+    <script>
+        function cifrarCesar() {
+            let texto = document.getElementById('textoAcifrar').value;
+            let codigo = parseInt(document.getElementById('codigo').value);
+            let cifrado = '';
+
+            for (let i = 0; i < texto.length; i++) {
+                let char = texto.charCodeAt(i);
+
+                if (char >= 65 && char <= 90) {
+                    cifrado += String.fromCharCode((char - 65 + codigo) % 26 + 65);
+                } else if (char >= 97 && char <= 122) {
+                    cifrado += String.fromCharCode((char - 97 + codigo) % 26 + 97);
+                } else {
+                    cifrado += String.fromCharCode(char);
+                }
+            }
+
+            document.getElementById('resultado').innerText = cifrado;
+        }
+    </script>
+</body>
+</html>
