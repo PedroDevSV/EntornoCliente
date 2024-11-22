@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Diferencia de Fechas</title>
+</head>
+<body>
+    <h1>Calcula la diferencia en días entre dos fechas</h1>
+    <form id="fechaForm">
+        <label for="fecha1">Fecha 1:</label>
+        <input type="date" id="fecha1" name="fecha1" required>
+        <br><br>
+        <label for="fecha2">Fecha 2:</label>
+        <input type="date" id="fecha2" name="fecha2" required>
+        <br><br>
+        <button type="button" onclick="calcularDiferencia()">Calcular Diferencia</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDiferencia() {
+            const fecha1 = new Date(document.getElementById('fecha1').value);
+            const fecha2 = new Date(document.getElementById('fecha2').value);
+
+            if (isNaN(fecha1) || isNaN(fecha2)) {
+                document.getElementById('resultado').textContent = 'Por favor, introduce fechas válidas.';
+                return;
+            }
+
+            const diferenciaMilisegundos = Math.abs(fecha2.getTime() - fecha1.getTime());
+            const diferenciaDias = Math.ceil(diferenciaMilisegundos / (1000 * 60 * 60 * 24));
+
+            document.getElementById('resultado').textContent = `La diferencia es de ${diferenciaDias} días.`;
+        }
+    </script>
+</body>
+</html>

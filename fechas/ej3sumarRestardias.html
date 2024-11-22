@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Fecha</title>
+</head>
+<body>
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha">
+    <label for="dias">Días a modificar:</label>
+    <input type="number" id="dias" name="dias">
+    <button onclick="mostrarFechaModificada()">Modificar Fecha</button>
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarFechaModificada() {
+            let fecha = document.getElementById('fecha').value;
+            let dias = parseInt(document.getElementById('dias').value);
+            let fechaModificada = modificarFecha(fecha, dias);
+            document.getElementById('resultado').innerText = `Fecha modificada: ${fechaModificada.toDateString()}`;
+        }
+    </script>
+    <script>
+        function modificarFecha(fecha, dias) {
+            let nuevaFecha = new Date(fecha);
+            nuevaFecha.setDate(nuevaFecha.getDate() + dias);
+            return nuevaFecha;
+        }
+
+        // Pruebas de la función
+        let fecha1 = new Date('2023-10-01');
+        let dias1 = 5;
+        console.log(`Fecha original: ${fecha1}`);
+        console.log(`Fecha modificada (+${dias1} días): ${modificarFecha(fecha1, dias1)}`);
+
+        let fecha2 = new Date('2023-10-01');
+        let dias2 = -10;
+        console.log(`Fecha original: ${fecha2}`);
+        console.log(`Fecha modificada (${dias2} días): ${modificarFecha(fecha2, dias2)}`);
+    </script>
+</body>
+</html>
