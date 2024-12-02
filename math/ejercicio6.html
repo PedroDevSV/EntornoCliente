@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <h1>Generador de aleatorios (Generara 20 aleatorios al pulsar el botón)</h1>
+    Número 1 (menor) <input id="num1" type="number">
+    Número 2 (mayor) <input id="num2" type="number">
+    <button onclick="aleatorios()">Aleatorio</button>
+    <p id="demo"></p>
+    
+    <script>
+        function aleatorios(){
+            var num1=parseInt(document.getElementById("num1").value);
+            var num2=parseInt(document.getElementById("num2").value);
+            
+           if ((num1=="")||(num2=="")){
+            alert("Debes rellenar los input con números.");
+           }
+           else if(num1>=num2){
+            alert("El número 2 debe ser mayor que número 1");
+           }
+           else{
+            var arrayNumeritos=[];
+            var cont=0;
+            while (cont<20){
+                var alea=Math.floor(Math.random() * (num2 - num1+1) ) + num1;
+                arrayNumeritos.push(alea);
+                cont++;
+            }
+            document.getElementById("demo").innerHTML="";
+            document.getElementById("demo").innerHTML="Los 20 aleatorios generados son: <br>";
+            document.getElementById("demo").innerHTML+=arrayNumeritos;
+            
+
+           }
+        }
+
+    </script>
+</body>
+</html>

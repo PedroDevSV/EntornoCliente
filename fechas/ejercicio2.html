@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h3>ENUNCIADO DEL EJERCICIO</h3>
+    <p> Pide al usuario que introduzca dos fechas en formato YYYY-MM-DD (usa dos input de tipo Date).
+    <br>Calcula la diferencia en días entre ambas fechas.
+    <br>Muestra el resultado en la pantalla.
+        </p>
+    Fecha 1 <input id="fecha1" type="date"><br>
+    Fecha 2 <input id="fecha2" type="date"><br>
+    <button onclick="calcularDiferencia()"> Calcular</button>
+    <p id="fecha"> </p>
+    <script>
+        function calcularDiferencia(){
+            const fechita1=new Date(document.getElementById("fecha1").value);
+            const fechita2=new Date(document.getElementById("fecha2").value);
+            var diferenciaMil=fechita2.getTime()-fechita1.getTime();
+            var diferenciaSeg=diferenciaMil/1000;
+            var diferenciaMin=diferenciaSeg/60;
+            var diferenciaHor=diferenciaMin/60;
+            var diferenciaDias=diferenciaHor/24;
+            document.getElementById("fecha").innerHTML="Diferencia entre las fechas "+diferenciaDias+" dias";
+        }
+    </script>
+</body>
+</html>

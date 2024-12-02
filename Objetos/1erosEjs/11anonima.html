@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="Ordename()">Ordena</button>
+    <p id="mostrar1"></p>
+    <p id="mostrar2"></p>
+
+    <script>
+        let arrayNumer=[3,4,11,1,7,9,0];
+        document.getElementById('mostrar1').innerText = arrayNumer;
+
+        function Ordename(){
+            arrayNumer.sort(
+                function(a,b){
+                    // para hacerlo ascendente, va comparando elementos del array
+                    // para hacerlo descendente, b-a
+                    // funciona tambien con letras, alfabeticamente
+                    return a-b;
+                }
+            );
+            document.getElementById('mostrar2').innerText = arrayNumer;
+        }
+
+    </script>
+</body>
+</html>

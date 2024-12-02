@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <input id="fechaNaci" type="date">
+    <button onclick="calcularEdad()">Calcular edad</button>
+    <p id="demo"></p>
+
+    <script>
+        function calcularEdad(){
+            const fechaNacimiento=new Date(document.getElementById("fechaNaci").value);
+            const fechaHoy=new Date();
+            let edadAnios=fechaHoy.getFullYear()-fechaNacimiento.getFullYear();
+            let edadMes=fechaHoy.getMonth()-fechaNacimiento.getMonth();
+            let edadDias=fechaHoy.getDate()-fechaNacimiento.getDate();
+            if(edadMes<0){
+                edadAnios--;
+                edadMes+=12;
+            }
+            document.getElementById("demo").innerHTML= "La edad de la persona "+edadDias+ " días <br>";
+            document.getElementById("demo").innerHTML+= "La edad de la persona "+edadMes+ " meses <br>";
+            document.getElementById("demo").innerHTML+= "La edad de la persona "+edadAnios+ " años <br>";
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    Introduce los números que deseas, separador por el delimitador , <input id="numeros" type="text">
+    <button onclick="maxMin()">MaxMin</button>
+    <p id="demo"></p>
+    
+    <script>
+        function maxMin(){
+            //Parseamos el array con la función map(Number)
+            var arrayNumeros=document.getElementById("numeros").value.split(",").map(Number);
+            if (arrayNumeros.length==6){
+                var max=Math.max(...arrayNumeros);
+                var min=Math.min(...arrayNumeros);
+                document.getElementById("demo").innerHTML="El máximo número del array es "+max+" y el mínimo es "+min;
+
+            }
+            else{
+                alert("Número de números incorrecto, contacte con el administrador, por favor");
+            }
+
+            
+           
+        }
+
+    </script>
+</body>
+</html>

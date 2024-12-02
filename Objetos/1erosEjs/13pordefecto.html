@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nombre" placeholder="Introduce nombre">
+     <input type="number" id="edad" placeholder="Introduce edad si quieres">
+    <button onclick="saludo(nombre,edad)">Saluda</button>
+    <p id="mostrar"></p>
+
+
+    <script>
+        let nombre=document.getElementById('nombre');
+        let edad=document.getElementById('edad').value;
+        // Por defecto vamos a poner valores,por si no le damos valor a las variables
+       
+        function saludo(name="Desconocido", age="18") {
+            let name = nombre;
+            let age = age;
+            document.getElementById('mostrar').innerText = 'Hola '+name+ ", de "+ age;
+        }
+
+     
+    </script>
+</body>
+</html>

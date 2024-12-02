@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <h1>Dime el número de dígitos</h1>
+    Número <input id="numero" type="number">
+    <button onclick="caclular()">Calcular</button>
+    <p id="demo"></p>
+    
+    <script>
+        function caclular(){
+            var num1=parseInt(document.getElementById("numero").value);
+            let digitos=Math.abs(num1).toString().length;
+            document.getElementById("demo").innerHTML="El número de digitos de "+num1+" es "+digitos;
+            
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <h1>¿Cuántos días faltan para navidad?</h1>
+    <button onclick="calcularDiasParaNavidad()">Calcular</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function calcularDiasParaNavidad(){
+            const fechaHoy=new Date();
+            const anhioActual = fechaHoy.getFullYear();
+            let navidad = new Date(anhioActual,11,25);
+            if(fechaHoy>navidad){
+                navidad=new Date(anhioActual+1,11,25);
+            }
+            const diferenciaMil=navidad-fechaHoy;
+            const diasRestantes=Math.ceil(diferenciaMil/(1000*60*60*24));
+            document.getElementById("demo").innerHTML="Faltan "+diasRestantes+" días para navidad";
+        }
+    </script>
+</body>
+</html>

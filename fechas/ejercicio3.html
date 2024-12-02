@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h3>ENUNCIADO DEL EJERCICIO</h3>
+    <p>Crea una función llamada modificarFecha(fecha, dias) que reciba una fecha y un número de días (puede ser positivo o negativo).
+    <br>La función debe devolver una nueva fecha con los días añadidos o restados.
+    <br>Prueba la función con diferentes valores y muestra el resultado en la consola.
+        </p>
+    Fecha que deseamos modificar <input id="fecha1" type="date"><br>
+    Cantidad de días <input id="cantidadDias" type="number"><br>
+    <button onclick="modificarFecha()"> Calcular</button>
+    <p id="fecha"> </p>
+    <script>
+        function modificarFecha(){
+            var fechaIntroducida=document.getElementById("fecha1").value;
+            var diasAnadidos=parseInt(document.getElementById("cantidadDias").value);
+            let fechaNueva=new Date(fechaIntroducida);
+            fechaNueva.setDate(fechaNueva.getDate()+diasAnadidos);
+            document.getElementById("fecha").innerHTML= "Fecha nueva "+fechaNueva;
+
+        }
+    </script>
+</body>
+</html>

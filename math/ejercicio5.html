@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    Introduce un número en grados <input id="numero" type="number">
+    <button onclick="grados()">Funciones trigonometricas</button>
+    <p id="demo"></p>
+    
+    <script>
+        function grados(){
+            var num1=document.getElementById("numero").value;
+            var seno=Math.sin(num1);
+            var coseno=Math.cos(num1);
+            var tangente=Math.tan(num1);
+            var radianes=num1 * (Math.PI / 180);
+            document.getElementById("demo").innerHTML="El seno es "+seno+" el coseno "+coseno+" la tangente "+tangente+"<br>";
+            document.getElementById("demo").innerHTML+="El ángulo en grados "+num1+" en radianes es "+ radianes;
+                    }
+
+    </script>
+</body>
+</html>

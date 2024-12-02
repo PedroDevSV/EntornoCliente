@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+        <h1>Calcular día de la semana</h1>
+        <p>Introduce una fecha</p>
+        <input id="fecha" type="date">
+        <button onclick="calcularDia()">Calcula día de la semana</button>
+        <p id="demo"></p>
+        <script>
+            function calcularDia(){
+                let semana=["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+                let fechita=new Date(document.getElementById("fecha").value);
+                let diaSemana=semana[fechita.getDay()];
+                document.getElementById("demo").innerHTML="El día de la semana correspondiente a la fecha introducida es : "+diaSemana;
+
+            }
+        </script>
+</body>
+</html>

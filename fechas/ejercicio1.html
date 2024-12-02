@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <p id="fecha"> </p>
+    
+    <script>
+        const fechaActual=new Date();
+        var dia=fechaActual.getDate();
+        var mes=fechaActual.getMonth()+1;
+        var anho=fechaActual.getFullYear();
+        var fechaFormateada= dia.toString()+"/"+mes.toString()+"/"+anho.toString();
+        document.getElementById("fecha").innerHTML= "Fecha formateada DD/MM/AAAA --> "+fechaFormateada;
+
+    </script>
+</body>
+</html>

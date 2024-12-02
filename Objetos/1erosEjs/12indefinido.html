@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="numeros" placeholder="Introduce array de numeros">
+    <button onclick="promedio()">Promedio</button>
+    <p id="mostrar"></p>
+
+
+    <script>
+        function promedio(...args) {
+            const numeros = document.getElementById('numeros').value;
+            let promedio=0;
+            let longitud=numeros.length;
+            for(let num of numeros){
+                promedio += parseInt(num);
+            }
+             document.getElementById('mostrar').innerText = (promedio/longitud).toFixed(2);
+        }
+
+     
+    </script>
+</body>
+</html>

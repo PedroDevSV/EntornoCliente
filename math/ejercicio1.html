@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Ejercicio 1 del objeto Math</h1>
+    <label for="numero">Introduce un número decimal</label>
+    <input id="numero" name="numero" type="number">
+    <button onclick="mostrar()">Calcular</button>
+    <p id="demo"></p>
+
+    <script>
+        function mostrar(){
+            let numerito = parseFloat(document.getElementById("numero").value);
+            let redondeado = Math.round(numerito); 
+            let arriba= Math.ceil(numerito);
+            let abajo =Math.floor(numerito);
+            document.getElementById("demo").innerHTML="El número redondeado al entero más cercano es: "+redondeado+"<br>";
+            document.getElementById("demo").innerHTML+="El número redondeado al alza: "+arriba+"<br>";
+            document.getElementById("demo").innerHTML+="El número redondeado a la baja: "+abajo+"<br>";
+        }
+    </script>
+</body>
+</html>

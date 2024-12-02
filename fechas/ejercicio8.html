@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    Fecha 1:<input type="date" id="fechita1">
+    Fecha 2:<input type="date" id="fechita2">
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function calcular(){
+
+            var f1=document.getElementById("fechita1").value;
+            var f2=document.getElementById("fechita2").value;
+
+            var f1Completa =new Date(f1);
+            var f2Completa =new Date(f2);
+
+            document.getElementById("demo").innerHTML= "Diferencia en milisegundos "+ (f2Completa.getTime()-f1Completa.getTime());
+
+        }
+    </script>
+
+</body>
+</html>

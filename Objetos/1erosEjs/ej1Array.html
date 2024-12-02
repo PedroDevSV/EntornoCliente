@@ -16,10 +16,13 @@
         let numeros = [4,6,2,1,8];
         document.getElementById("resultado1").innerHTML = "Array: "+numeros;
         
+        
+
         function quitarUltimo(){
         // pop quita ultimo elemento del array
             numeros.pop();
             document.getElementById("resultado1").innerHTML = "Array: "+numeros;
+    
        }
 
        function añadirUltimo(){
@@ -28,6 +31,7 @@
             document.getElementById("resultado1").innerHTML = "Array: "+numeros;
        }
 
+       
         function quitarPrimero(){
             //splice primer atributo la posicion, segundo el num de elementos que corta
             numeros.splice(0,1);

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    Número <input id="numero" type="number">
+    Exponente <input id="exp" type="number">
+    <button onclick="potencia()">Potencia</button>
+    <p id="demo"></p>
+    
+    <script>
+        function potencia(){
+            var num1=document.getElementById("numero").value;
+            var exponente=document.getElementById("exp").value;
+            var potencia=Math.pow(num1, exponente);
+            document.getElementById("demo").innerHTML="El número "+num1+" elevado a "+exponente+" es igual a "+potencia+"<br>";
+            var raiz= Math.sqrt(potencia);
+            document.getElementById("demo").innerHTML+="La raíz cuadrada de "+potencia+" es "+raiz;
+
+        }
+
+    </script>
+</body>
+</html>

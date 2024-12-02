@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" name="" id="n1" required>
+    <input type="number" name="" id="n2" required>
+    <button onclick="hazsuma()">Sumar</button>
+    <p id="mostrar"></p>
+    <script>
+        // apply para operaciones con array
+        // creamos objeto
+        const matematicas = {
+            // atributo sumar
+            sumar: function(num1,num2){
+                let suma =num1+num2;
+                document.getElementById("mostrar").innerHTML+="La suma de "+num1+" y "+num2+" es: "+suma+"<br>";
+            } 
+        }
+
+        // fuera de objeto 
+        function hazsuma(){
+            let numerito1 = parseInt(document.getElementById("n1").value);
+            let numerito2 = parseInt(document.getElementById("n2").value);
+
+            // usamos funcion de objeto, con apply para ARRAYS
+            // le metes null porq no usas objeto
+            // apply va a usar como lista de parámetros
+            matematicas.sumar.apply(null,[numerito1,numerito2]);
+
+            // El call no es para arrays, solo para parametros sueltos 
+            matematicas.sumar.call(null,numerito1,numerito2);
+        }
+    </script>
+</body>
+</html>
