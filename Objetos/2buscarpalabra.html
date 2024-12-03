@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Introduce un texto</p>
+    <input type="text" id="texto" required>
+    <p>	Palabra a buscar</p>
+    <input type="text" id="palabra" required>
+    <button onclick="buscar()">Buscar</button>
+    <h3 id="resp"></h3>
+    <script>
+        function buscar(){
+            let texto = document.getElementById('texto').value.toLowerCase();
+            let palabra = document.getElementById('palabra').value.toLowerCase();
+            
+            let arrayTexto=texto.split(' ');
+            let conta=0;
+            for(let i=0; i<arrayTexto.length; i++){
+                if(arrayTexto[i]==palabra){
+                    conta++;
+                }
+            }
+
+            document.getElementById('resp').innerHTML+=`${palabra} se ha encontrado ${conta} veces`;
+        }
+    </script>
+</body>
+</html>
