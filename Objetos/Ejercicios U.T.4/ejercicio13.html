@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio12</title>
+</head>
+<body>
+    <button onclick="hacerSaludo()">Saludame de todas las formas posibles</button>
+    <p id="demo"></p>
+    <script>
+        function hacerSaludo() {
+            saludar("Fernando",39);
+            saludar("Victor");
+            saludar();
+        }
+
+        //let numeroDenumeros=0;
+        function saludar(name="Desconocido", age="18") { 
+            
+            document.getElementById("demo").innerHTML+="Saludito de "+name+" cuya edad es "+age+"<br>";
+        }
+    </script>
+</body>
+</html>

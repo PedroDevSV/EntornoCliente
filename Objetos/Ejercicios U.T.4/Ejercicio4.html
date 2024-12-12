@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    Introduce un array de números separado por comas <input id="nums" type="text">
+    <button onclick="hazSuma()">Realiza la suma</button>
+    <p id="demo"></p>
+
+    <script>
+        function hazSuma(){
+            let resultado=0;
+            let numeritos = document.getElementById("nums").value;
+            let arrayNumeritos=numeritos.split(",");
+            for (let index = 0; index < arrayNumeritos.length; index++) {
+                resultado+=parseInt(arrayNumeritos[index]);
+            }
+            document.getElementById("demo").innerHTML=`${resultado} esto es la suma de los números`;
+        }
+    </script>
+
+</body>
+</html>

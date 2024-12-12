@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>El valor del array inicial es:</h4>
+    <p id="inicial"></p>
+    <h4>Después de los cambios el array tiene los siguientes valores:</h4>
+    <p id="cambios"></p>
+    <h4>Array cortado</h4>
+    <p id="cortado"></p>
+    <button onclick="ultimoValor()">Quitar último valor</button>
+    <br>
+    <br>
+    Introduce un número al final <input size="3" id="dato" type="text">
+    
+    <button onclick="anadirValor()">Añadir valor al final</button>
+    <br>
+    <br>
+    <button onclick="quitarPrimero()">Quitar primer elemento</button>
+    <br>
+    <br>
+    Introduce un número al principio <input size="3" id="datoPrimero" type="text">
+    <button onclick="anadirPrincipio()">Añadir valor al principio</button>
+    <br>
+    <br>
+    <button onclick="sustituir215()">Sustituimos el 2 por el 15</button>
+    <br>
+    <br>
+    <button onclick="anadir2330()">Añadimos el 23 y 30</button>
+    <br>
+    <br>
+    <button onclick="cortar()">Cortar array</button>
+    <br>
+    <br>
+    <button onclick="asc()">Ordenar ascendente</button>
+    <br>
+    <br>
+    <button onclick="desc()">Ordenar descendente</button>
+    <br>
+    <br>
+    <script>
+        let arrayNumeros=[4, 6, 2, 1, 8];
+        document.getElementById("inicial").innerHTML=arrayNumeros;
+        
+        function desc(){
+            arrayNumeros.sort(function(a,b){return a-b});
+            document.getElementById("cambios").innerHTML=arrayNumeros;
+        }
+        function asc(){
+            arrayNumeros.sort(function(a,b){return b-a});
+            document.getElementById("cambios").innerHTML=arrayNumeros;
+        }
+        function cortar(){
+            let corteArray=arrayNumeros.slice(-3);
+            document.getElementById("cortado").innerHTML=corteArray;
+        }
+        function anadir2330(){
+            arrayNumeros.splice(3,0,23,30);
+            document.getElementById("cambios").innerHTML=arrayNumeros;
+        }
+
+        function sustituir215(){
+            var encontrado=0;
+            let index=0;
+            while(encontrado==0){
+                console.log(index);
+                index = arrayNumeros.indexOf(2);
+                if (index !== -1) {
+                    arrayNumeros[index] = 15;  
+                }
+                else{
+                    encontrado=1;
+                }
+            }
+            document.getElementById("cambios").innerHTML=arrayNumeros;
+        }
+
+        function ultimoValor(){
+            arrayNumeros.pop();
+            document.getElementById("cambios").innerHTML=arrayNumeros;
+        }
+
+        function anadirValor(){
+            let valorcito=document.getElementById("dato").value;
+            arrayNumeros.push(valorcito);
+            document.getElementById("cambios").innerHTML=arrayNumeros;
+        }
+
+        function anadirPrincipio(){
+            let valorcito=document.getElementById("datoPrimero").value;
+            arrayNumeros.unshift(valorcito);
+            document.getElementById("cambios").innerHTML=arrayNumeros;
+        }
+
+        function quitarPrimero(){
+            arrayNumeros.shift();
+            document.getElementById("cambios").innerHTML=arrayNumeros;
+        }
+    </script>
+</body>
+</html>

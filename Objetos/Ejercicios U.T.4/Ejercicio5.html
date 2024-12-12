@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Introduce el texto a codificar <input id="texto" type="text" name="">
+    Introduce una clave <input id="clave" type="text" name="">
+    <button onclick="codifica()">Codificar</button>
+    <br>
+    Texto codificadado <p id="demo"></p>
+    <script>
+
+        //Solo codifica en mayúscula
+        function codificarLetra(letrita, clavecitav2){
+            let letraCodificada;
+            let letraVueltaAnormal;
+            let letritaMayus=letrita.toUpperCase();
+            let letraAscci=letritaMayus.charCodeAt();
+            if (letraAscci>=65&&letraAscci<=90){
+                letraCodificada=letraAscci+clavecitav2;
+                if (letraCodificada>90){
+                    letraCodificada=letraCodificada-26;
+                }
+            }
+            else{
+                letraCodificada=letraAscci;
+            }
+            console.log(letraCodificada);
+            letraVueltaAnormal=String.fromCharCode(letraCodificada);
+            document.getElementById("demo").innerHTML+=letraVueltaAnormal;
+        }
+
+        function codifica(){
+            let textito=document.getElementById("texto").value;
+            let clavecita=document.getElementById("clave").value;
+
+            for (let index = 0; index < textito.length; index++) {
+                codificarLetra(textito[index], parseInt(clavecita))      
+            }
+        }
+    </script>
+</body>
+</html>

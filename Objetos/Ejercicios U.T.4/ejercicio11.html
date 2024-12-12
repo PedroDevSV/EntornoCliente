@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    Try me <button onclick="Ordename()">Ordena el array</button>
+    <p id="demo"></p>
+
+    <script>
+        let arrayNumeritos=[3, 4, 11, 1, 7, 9, 0];
+        document.getElementById("demo").innerHTML="Array Inicial ->"+arrayNumeritos;
+        function Ordename(){
+            arrayNumeritos.sort(
+            function (a,b){
+                return a-b;
+            }
+            );
+            document.getElementById("demo").innerHTML="Array ordenado ->"+arrayNumeritos;
+        }
+        
+
+
+    </script>
+</body>
+</html>
