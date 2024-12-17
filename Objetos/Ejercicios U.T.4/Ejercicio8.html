@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="boton" onclick="mostrarFuego()">Mostrar fuego</button>
+    <button id="boton" onclick="mostrarTodo()">Mostrar todo</button>
+    <div id="demo"></div>
+
+    <script>
+        class Pokemon{
+            constructor(nombre, tipo, foto){
+                this.nombre=nombre;
+                this.tipo=tipo;
+                this.foto=foto;
+            }
+            mostrar(){
+                return `<div><h2>${this.nombre}</h2><h2>${this.tipo}</h2><img width="150" src=${this.foto}></div>`;
+            }  
+        }
+        let pokemon1=new Pokemon("Pikachu", "Rayo", "https://m.media-amazon.com/images/I/61UbSbkse8L.jpg");
+        let pokemon2=new Pokemon("Charmander", "Fuego", "https://m.media-amazon.com/images/I/411VfkoS0tL._AC_UF894,1000_QL80_.jpg");
+        let pokemon3=new Pokemon("Ditto", "Normal", "https://www.pokemon.com/cms2-es-es/img/cards/web/PGO/PGO_ES_53.png");
+        let pokemon4=new Pokemon("Mewtwo", "Animal", "https://images.wikidexcdn.net/mwuploads/wikidex/f/f4/latest/20220502172114/Mewtwo_V_%28Pok%C3%A9mon_GO_30_TCG%29.png");
+        let pokemon5=new Pokemon("Moltres", "Fuego", "https://m.media-amazon.com/images/I/61jbmDJUurL._AC_UF894,1000_QL80_.jpg");
+
+        let arrayPokemon=[pokemon1,pokemon2,pokemon3, pokemon4, pokemon5];
+
+        function mostrarTodo(){
+            let resultado="";
+            for (let pokemon of arrayPokemon){
+                resultado+=pokemon.mostrar();
+            }
+            document.getElementById("demo").innerHTML=resultado;
+        }
+        function mostrarFuego(){
+            let resultado="";
+            for (let pokemon of arrayPokemon){
+                if(pokemon.tipo=="Fuego")
+                    resultado+=pokemon.mostrar();
+            }
+            document.getElementById("demo").innerHTML=resultado;
+        }
+
+        
+
+    </script>
+
+</body>
+</html>

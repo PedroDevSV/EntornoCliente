@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <h1>Cifrado estilo polialfabético</h1>
+    Introduce el texto a codificar <input id="texto" type="text" name="">
+    Introduce una clave <input id="clave" type="text" name="">
+    <button onclick="codifica()">Codificar</button>
+    <br>
+    Texto codificadado <p id="demo"></p>
+    <script>
+
+        //Solo codifica en mayúscula
+        function codificarLetra(letrita, clavecitav2){
+            let letraCodificada;
+            let letraVueltaAnormal;
+            
+            let letraAscci=letrita.charCodeAt();
+            letraCodificada=letraAscci+clavecitav2;
+            console.log(letraCodificada);
+            letraVueltaAnormal=String.fromCharCode(letraCodificada);
+            document.getElementById("demo").innerHTML+=letraVueltaAnormal;
+        }
+
+        function codifica(){
+            let textito=document.getElementById("texto").value;
+            let clavecita=document.getElementById("clave").value;
+            let max=clavecita.length;
+            let cont=0;
+
+            for (let index = 0; index < textito.length; index++) {
+                if (cont==max){
+                    cont=0;
+                }
+                codificarLetra(textito[index], parseInt(clavecita[cont]));
+                cont++;      
+            }
+        }
+    </script>
+</body>
+</html>

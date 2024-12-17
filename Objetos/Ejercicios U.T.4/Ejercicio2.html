@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    Introduce un texto <input id="texto" type="text" required>
+    Introduce la palabra que debe buscar <input id="palabra" type="text" required>
+    <button onclick="buscar()">Buscar</button>
+    <p id="demo"></p>
+
+    <script>
+        function buscar(){
+            let contador=0;
+            let textico = document.getElementById("texto").value;
+            let palabrita = document.getElementById("palabra").value;
+            textico= textico.toLowerCase();
+            palabrita= palabrita.toLowerCase();
+            let textoArray=textico.split(" ");
+            for (let index = 0; index < textoArray.length; index++) {
+                if (textoArray[index]==palabrita) {
+                    contador++;
+                }
+            }
+            document.getElementById("demo").innerHTML=`${palabrita} se ha encontrado ${contador} veces`;
+        }
+    </script>
+
+</body>
+</html>
