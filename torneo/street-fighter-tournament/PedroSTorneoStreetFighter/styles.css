@@ -1,0 +1,72 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-image: url('images/fondo1.jpg');
+    background-size: cover;
+    background-position: center;
+
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+#timer{
+    font-family: "Jersey 15";
+    font-size: 1.5em;
+}
+.character-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.character {
+    border: 2px solid #ff5722;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    width: 150px;
+}
+
+.character img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 40px;
+    font-size: 46px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family:"Jersey 15" ;
+}
+
+.btn{
+    font-size: 1.8em;
+    font-family: "Jersey 15";
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+
+.comb{
+    max-width: 300px;
+}
+
+h1{
+    color: rgb(12, 12, 12);
+    font-weight: 800;
+    font-size: 4em;
+    font-family: "Jersey 15";
+}
