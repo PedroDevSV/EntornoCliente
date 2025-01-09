@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<p>
+  <button onclick="moveTopLeft()">Top Left</button>
+  <button onclick="moveTopRight()">Top Right</button>
+  <button onclick="moveBottomLeft()">Bottom Left</button>
+  <button onclick="moveBottomRight()">Bottom Right</button>
+</p> 
+
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+
+<script>
+function moveTopLeft() {
+  move(0, 0);
+}
+
+function moveTopRight() {
+  move(350, 0);
+}
+
+function moveBottomLeft() {
+  move(0, 350);
+}
+
+function moveBottomRight() {
+  move(350, 350);
+}
+
+function move(x, y) {
+  let id = null;
+  const elem = document.getElementById("animate");   
+  let posX = parseInt(elem.style.left) || 0;
+  let posY = parseInt(elem.style.top) || 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (posX == x && posY == y) {
+      clearInterval(id);
+    } else {
+        // controlamos que ya esté en esa esquina
+      if (posX < x) posX++;
+      if (posX > x) posX--;
+      if (posY < y) posY++;
+      if (posY > y) posY--;
+      elem.style.left = posX + "px"; 
+      elem.style.top = posY + "px"; 
+    }
+  }
+}
+</script>
+
+</body>
+</html>
