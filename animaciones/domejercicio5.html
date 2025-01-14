@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+<style>
+    #cuadro{
+         margin: 0 auto;
+    }
+</style>
+</head>
+<body>
+<div id="cuadro">hola don pepito, cómo estás?</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cuadro = document.getElementById("cuadro");
+    cuadro.style.borderStyle = "dotted";
+    cuadro.style.borderColor = "pink";
+    cuadro.style.color = "darkblue";
+    cuadro.style.width = "500px";
+    cuadro.style.height = "200px";
+    cuadro.style.borderRadius = "25px";
+    cuadro.style.backgroundColor = "aqua";
+    cuadro.style.fontStyle = "italic";
+    
+    cuadro.addEventListener("mouseenter", function() {
+        cuadro.style.cursor = "none";
+    });
+    
+    cuadro.addEventListener("mouseleave", function() {
+        cuadro.style.cursor = "default";
+    });
+});
+</script>
+
+</body>
+</html>
