@@ -5,17 +5,38 @@
     <title>DOM</title>
 </head>
 <body>
-<h1>Página con enlaces</h1>
-<a href="http://www.ces-vegamedia.es">Centro Vega Media</a>
-<div id="enlaces">
-	<a href="http://www.pccomponentes.com">PC Componentes</a><br>
-	<a href="enlace2.html">Mi página 2</a>
-</div>
-<a href="http://es.aliexpress.com">Aliexpress</a><br>
-<a href="enlace3.html">Mi página 3</a>
-<p>
-<input type="button" name="boton" value="Abrir">
-</p>
-<div id="resultado"></div>
+    <h1>Página con enlaces</h1>
+    <div id="enlaces">
+        <a href="http://www.ces-vegamedia.es">Centro Vega Media</a>
+        <a href="http://www.pccomponentes.com">PC Componentes</a><br>
+        <a href="enlace2.html">Mi página 2</a>
+        <a href="http://es.aliexpress.com">Aliexpress</a><br>
+        <a href="enlace3.html">Mi página 3</a>
+    </div>
+    <p>
+        <button onclick="abrirEnlaces()">Abrir</button>
+    </p>
+    <div id="resultado"></div>
+    <script>
+    function abrirEnlaces() {
+        let enlaces = document.querySelectorAll('a');
+        let resultado = document.getElementById('resultado');
+        resultado.innerHTML = '';
+        let count = 0;
+        let lista = '<ol>';
+        for (let enlace of enlaces) {
+            if (enlace.href.startsWith('http')) {
+                window.open(enlace.href, '_blank', 'width=500,height=500');
+                count++;
+                lista += '<li>' + enlace.textContent + '</li>';
+                if (count >= 5) break; 
+            }
+        }
+        lista += '</ol>';
+        resultado.innerHTML = 'Número de páginas abiertas: ' + count + '<br>' + lista;
+    }
+
+   
+    </script>
 </body>
 </html>
