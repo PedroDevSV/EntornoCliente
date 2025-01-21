@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: black;
+            width: 80px;
+            height: 80px;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h3>divs premio</h3>
+    <div></div>
+    <div></div>
+    <div></div> 
+    <div></div>
+<script>
+    const divs = Array.from(document.querySelectorAll('div'));
+    const random = Math.floor(Math.random() * divs.length);
+    const premiado = divs[random];
+    premiado.addEventListener('click', () => {
+        premiado.style.backgroundColor = 'yellow';
+        alert('¡Has hecho clic en el premiado!');
+    });
+</script>
+</body>
+</html>
