@@ -1,0 +1,48 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: #6c757d;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-image: url('assets/pokeclose.png');
+    background-size: cover;
+}
+
+.cell.pokemon {
+    background-image: url('assets/pokeopen.png');
+}
+
+.cell.charm {
+    background-image: url('assets/charm.png');
+}
+
+.cell.squirt {
+    background-image: url('assets/squirt.png');
+}
+
+.cell.pikachu {
+    background-image: url('assets/pikachu.png');
+}
+
+.cell.empty {
+    background-image: url('assets/pokeopen.png');
+}

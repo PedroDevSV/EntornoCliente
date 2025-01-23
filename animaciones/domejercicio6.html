@@ -14,7 +14,7 @@
         <a href="enlace3.html">Mi página 3</a>
     </div>
     <p>
-        <button onclick="abrirEnlaces()">Abrir</button>
+        <input type="button" name="boton" value="Abrir">
     </p>
     <div id="resultado"></div>
     <script>
@@ -36,7 +36,7 @@
         resultado.innerHTML = 'Número de páginas abiertas: ' + count + '<br>' + lista;
     }
 
-   
+    document.querySelector('input[name="boton"]').addEventListener('click', abrirEnlaces);
     </script>
 </body>
 </html>

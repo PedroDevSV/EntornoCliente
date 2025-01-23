@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Color de Fuente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+    <script>
+        function changeTextColor() {
+            const colors = ['red', 'blue', 'green', 'purple', 'orange', 'pink'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('text').style.color = randomColor;
+        }
+    </script>
+</head>
+<body onload="changeTextColor()">
+    <h1 id="text">¡Hola! El color de este texto cambia cada vez que se carga la página.</h1>
+</body>
+</html></body>

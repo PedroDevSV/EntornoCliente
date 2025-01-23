@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos en Texto</title>
+    <style>
+        #texto {
+            font-size: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="texto">Este es el texto sobre el que se aplicarán los eventos.</div>
+    <button id="btnAlert">Crear evento de alerta</button>
+    <button id="btnHover">Crear evento de hover</button>
+    <button id="btnOut">Crear evento de salida</button>
+    <button id="btnRemove">Eliminar eventos</button>
+
+    <script>
+        const texto = document.getElementById('texto');
+        const btnAlert = document.getElementById('btnAlert');
+        const btnHover = document.getElementById('btnHover');
+        const btnOut = document.getElementById('btnOut');
+        const btnRemove = document.getElementById('btnRemove');
+
+        let alertEvent, hoverEvent, outEvent;
+
+        btnAlert.addEventListener('click', () => {
+            alertEvent = () => alert(texto.textContent);
+            texto.addEventListener('click', alertEvent);
+        });
+
+        btnHover.addEventListener('click', () => {
+            hoverEvent = () => texto.style.color = 'blue';
+            texto.addEventListener('mouseover', hoverEvent);
+        });
+
+        btnOut.addEventListener('click', () => {
+            outEvent = () => texto.style.color = 'black';
+            texto.addEventListener('mouseout', outEvent);
+        });
+
+        btnRemove.addEventListener('click', () => {
+            if (alertEvent) texto.removeEventListener('click', alertEvent);
+            if (hoverEvent) texto.removeEventListener('mouseover', hoverEvent);
+            if (outEvent) texto.removeEventListener('mouseout', outEvent);
+        });
+    </script>
+</body>
+</html>

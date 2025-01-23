@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones DOM</title>
+    <style>
+        #primera {
+            color: blue;
+        }
+        #segunda p {
+            background-color: transparent;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="primera">Este es el primer texto.</div>
+    <div id="segunda">
+        <p>Este es el segundo texto</p>
+    </div>
+
+    <script>
+        document.getElementById('primera').addEventListener('mouseover', function() {
+            this.style.color = 'green';
+        });
+
+        document.getElementById('primera').addEventListener('mouseout', function() {
+            this.style.color = 'blue';
+        });
+
+        document.querySelector('#segunda p').addEventListener('click', function() {
+            if (this.style.backgroundColor === 'black') {
+                this.style.backgroundColor = 'transparent';
+                this.style.color = 'black';
+            } else {
+                this.style.backgroundColor = 'black';
+                this.style.color = 'white';
+            }
+        });
+    </script>
+</body>
+</html>
