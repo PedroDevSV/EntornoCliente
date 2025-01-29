@@ -5,21 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animación Div</title>
     <style>
-        #movableDiv {
-            position: absolute;
-            padding: 20px;
-            background-color: lightblue;
-            border: 1px solid blue;
+        @keyframes changeColor {
+            0% { background-color: rgb(223, 241, 56); }
+            25% { background-color: rgb(255, 99, 71); }
+            50% { background-color: rgb(135, 206, 235); }
+            75% { background-color: rgb(144, 238, 144); }
+            100% { background-color: rgb(223, 241, 56); }
+        }
+
+        button {
+            animation: changeColor 0.2s infinite;
         }
         button {
             margin-top: 20px;
+            position: absolute;
+            padding: 20px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 1.3em;
+            background-color: rgb(223, 241, 56);
+            border: 1px solid rgb(214, 47, 69);
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px 1px black;
         }
     </style>
 </head>
 <body>
-    <div id="movableDiv">
-        Clicka en el botón de abajo si quieres ganar 1000€
-        <button id="trickButton">Click</button>
-    </div>
+ 
+    <button id="movableDiv">💸💸💸🤑 Clicka AQUI !!💲💲 si quieres ganar 1000€🤑💸💸💸</button>
+  
+    <script>
+        
+        const movableDiv = document.getElementById('movableDiv');
+        
+        movableDiv.addEventListener('mouseover', () => {
+            const audio = new Audio('loli.mp3');
+            audio.play();
+            const maxX = window.innerWidth - movableDiv.offsetWidth;
+            const maxY = window.innerHeight - movableDiv.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            movableDiv.style.left = `${randomX}px`;
+            movableDiv.style.top = `${randomY}px`;
+        });
+    </script>
 </body>
 </html>
