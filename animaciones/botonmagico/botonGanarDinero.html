@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación Div</title>
+    <style>
+        @keyframes changeColor2 {
+            0% { background-color: rgb(223, 241, 56); }
+            25% { background-color: rgb(255, 99, 71); }
+            50% { background-color: rgb(135, 206, 235); }
+            75% { background-color: rgb(144, 238, 144); }
+            100% { background-color: rgb(223, 241, 56); }
+        }
+        @keyframes changeColor {
+            0% { background-color: rgb(230, 230, 230); }
+            25% { background-color: rgb(0, 0, 0); }
+            50% { background-color: rgb(59, 255, 10); }
+            75% { background-color: rgb(255, 29, 29); }
+            100% { background-color: rgb(82, 220, 255); }
+        }
+        body{
+             animation: changeColor 0.4s infinite;
+        }
+        button {
+            animation: changeColor2 0.2s infinite;
+        }
+        button {
+            margin-top: 20px;
+            position: absolute;
+            padding: 20px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 1.3em;
+            background-color: rgb(223, 241, 56);
+            border: 1px solid rgb(214, 47, 69);
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px 1px black;
+        }
+    </style>
+</head>
+<body>
+<audio id="backgroundMusic" src="asset/music.mp3" autoplay loop></audio>
+    <button id="movableDiv">💸💸💸🤑 Clicka AQUI !!💲💲 si quieres ganar 1000€🤑💸💸💸</button>
+  
+    <script>
+        
+        const movableDiv = document.getElementById('movableDiv');
+        movableDiv.addEventListener('click', () => {
+            // alert('¡Felicidades! Has ganado 1000€');
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '50%';
+            modal.style.left = '50%';
+            modal.style.transform = 'translate(-50%, -50%)';
+            modal.style.backgroundColor = 'white';
+            modal.style.padding = '20px';
+            modal.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+            modal.style.zIndex = '1000';
+
+            const modalContent = document.createElement('div');
+            const modalImage = document.createElement('img');
+            modalImage.src = 'asset/congrats.jpg';
+            modalImage.style.width = '100%';
+            modalContent.appendChild(modalImage);
+
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Cerrar';
+            closeButton.style.marginTop = '10px';
+            closeButton.addEventListener('click', () => {
+                document.body.removeChild(modal);
+            });
+
+            modalContent.appendChild(closeButton);
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            const audio = new Audio('asset/loli.mp3');
+
+            audio.play();
+          
+        });
+        movableDiv.addEventListener('mouseover', () => {
+            // document.getElementById('backgroundMusic').pause();
+            const audio2 = new Audio('asset/siren.mp3');
+            audio2.play();
+            const maxX = window.innerWidth - movableDiv.offsetWidth;
+            const maxY = window.innerHeight - movableDiv.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            movableDiv.style.left = `${randomX}px`;
+            movableDiv.style.top = `${randomY}px`;
+        });
+        // movableDiv.addEventListener('mouseout', () => {
+        //     document.getElementById('backgroundMusic').play();
+        // });
+    </script>
+</body>
+</html>
