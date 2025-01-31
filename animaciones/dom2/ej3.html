@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="boton1">Etiquetas</button>
+    <button id="boton2">Color</button>
+    <button id="boton3">Tamaño</button>
+    <script>
+        document.getElementById('boton1').addEventListener('click', function() {
+            for (let i = 0; i < 10; i++) {
+                let p = document.createElement('p');
+                p.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+                document.body.appendChild(p);
+            }
+        });
+
+        document.getElementById('boton2').addEventListener('click', function() {
+            let paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach((p, index) => {
+                if (index % 2 === 0) {
+                    p.style.color = 'red';
+                }
+            });
+        });
+
+        document.getElementById('boton3').addEventListener('click', function() {
+            let paragraphs = document.querySelectorAll('p');
+            for (let i = paragraphs.length - 5; i < paragraphs.length; i++) {
+                paragraphs[i].style.fontSize = '50px';
+            }
+        });
+    </script>
+</body>
+</html>

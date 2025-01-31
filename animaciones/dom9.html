@@ -25,6 +25,7 @@
         const btnOut = document.getElementById('btnOut');
         const btnRemove = document.getElementById('btnRemove');
 
+        // crear eventLIstener y borrarlo
         let alertEvent, hoverEvent, outEvent;
 
         btnAlert.addEventListener('click', () => {
@@ -32,6 +33,8 @@
             texto.addEventListener('click', alertEvent);
         });
 
+        // borrar
+        
         btnHover.addEventListener('click', () => {
             hoverEvent = () => texto.style.color = 'blue';
             texto.addEventListener('mouseover', hoverEvent);

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Estructura</title>
+    <style>
+        #primera {
+            color: blue;
+        }
+        #segunda p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function crearEstructura() {
+            // Crear el primer div
+            var primeraDiv = document.createElement('div');
+            primeraDiv.id = 'primera';
+            primeraDiv.textContent = 'Este es el primer texto.';
+            
+            // Crear el segundo div
+            var segundaDiv = document.createElement('div');
+            segundaDiv.id = 'segunda';
+            
+            // Crear el párrafo dentro del segundo div
+            var parrafo = document.createElement('p');
+            parrafo.textContent = 'Este es el segundo texto';
+            segundaDiv.appendChild(parrafo);
+            
+            // Agregar los divs al body
+            document.body.appendChild(primeraDiv);
+            document.body.appendChild(segundaDiv);
+        }
+
+        // Llamar a la función para crear la estructura
+        crearEstructura();
+    </script>
+</body>
+</html>

@@ -39,8 +39,14 @@
     </style>
 </head>
 <body>
-<audio id="backgroundMusic" src="asset/music.mp3" autoplay loop></audio>
+
+<audio id="backgroundMusic" src="asset/music.mp3" loop></audio>
     <button id="movableDiv">💸💸💸🤑 Clicka AQUI !!💲💲 si quieres ganar 1000€🤑💸💸💸</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('backgroundMusic').play();
+        });
+    </script>
   
     <script>
         
@@ -78,6 +84,7 @@
             audio.play();
           
         });
+        // funcion hover se mueva el div aleatorio
         movableDiv.addEventListener('mouseover', () => {
             // document.getElementById('backgroundMusic').pause();
             const audio2 = new Audio('asset/siren.mp3');
