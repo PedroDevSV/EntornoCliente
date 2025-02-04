@@ -7,6 +7,33 @@ body{
     
 }
 
+.nav{
+    display: block;
+    grid-row: auto;
+   
+}
+.bannerContainer{
+    margin: 0 auto;
+    text-align: center;
+}
+
+#logo{
+    width: 300px;
+   
+}
+
+.buscador{
+    border-radius: 20px;
+    border: 1px solid grey;
+    padding: 10px;
+    width: 250px;
+}
+
+.filtrosContainer{
+    text-align: center;
+    margin: 0 auto;
+    /* display: block; */
+}
 .container{
     max-width: 1200px;
     margin: 0 auto;
@@ -29,12 +56,26 @@ body{
     position: relative;
 }
 
-.card-personaje img{
+.card-image{
+    position: relative;
     width: 100%;
     height: 300px;
+    /* object-fit: contain; */
+   padding: 10px;
+}
+
+.img-normal, .img-transform{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
     object-fit: contain;
-    border-bottom: 3px solid;
-    padding: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.img-transform{
+    opacity: 0;
 }
 
 .card-personaje h2 {
@@ -46,9 +87,12 @@ body{
     background-color: rgba(255, 255, 255, 0.733);
 }
 
-.card-personaje:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.card-personaje.con-transform:hover .img-normal {
+    opacity: 0;
+}
+
+.card-personaje:hover .img-transform {
+    opacity: 1;
 }
 
 .ki-container{
