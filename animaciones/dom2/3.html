@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="uno">Genera</button>
+    <button id="dos">Colorea</button>
+    <div id="resp">
+
+    </div>
+    <script>
+        const boton1=document.getElementById('uno');
+        const boton2=document.getElementById('dos');
+
+        boton1.addEventListener('click',()=>{
+            for (let i = 0; i < 10; i++) {
+                const p = document.createElement('p');
+                p.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+                p.classList.add('lorem');
+                document.getElementById('resp').appendChild(p);
+            }
+        });
+        boton2.addEventListener('click',()=>{
+            const paragraphs = document.querySelectorAll('.lorem');
+            for (let index = 1; index < paragraphs.length; index++) {
+                if(index % 2 != 0 ){
+                    paragraphs[index].style.color='red';
+                }
+                
+            }
+        });
+    </script>
+</body>
+</html>

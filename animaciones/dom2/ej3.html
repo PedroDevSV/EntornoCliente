@@ -1,38 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cambio de Fondo</title>
+    <style>
+        body {
+            transition: background-color 1s;
+        }
+    </style>
 </head>
 <body>
-    <button id="boton1">Etiquetas</button>
-    <button id="boton2">Color</button>
-    <button id="boton3">Tamaño</button>
     <script>
-        document.getElementById('boton1').addEventListener('click', function() {
-            for (let i = 0; i < 10; i++) {
-                let p = document.createElement('p');
-                p.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
-                document.body.appendChild(p);
-            }
-        });
+        const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#A133FF", "#33FFF5", "#F5FF33", "#FF8C33", "#33FF8C", "#8C33FF"];
+        
+        function changeBackgroundColor() {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
 
-        document.getElementById('boton2').addEventListener('click', function() {
-            let paragraphs = document.querySelectorAll('p');
-            paragraphs.forEach((p, index) => {
-                if (index % 2 === 0) {
-                    p.style.color = 'red';
-                }
-            });
-        });
-
-        document.getElementById('boton3').addEventListener('click', function() {
-            let paragraphs = document.querySelectorAll('p');
-            for (let i = paragraphs.length - 5; i < paragraphs.length; i++) {
-                paragraphs[i].style.fontSize = '50px';
-            }
-        });
+        setInterval(changeBackgroundColor, 2000);
     </script>
 </body>
 </html>

@@ -13,30 +13,21 @@
         }
     </style>
 </head>
-<body>
+<body class="cuerpo">
     <script>
         function crearEstructura() {
-            // Crear el primer div
-            var primeraDiv = document.createElement('div');
-            primeraDiv.id = 'primera';
-            primeraDiv.textContent = 'Este es el primer texto.';
-            
-            // Crear el segundo div
-            var segundaDiv = document.createElement('div');
-            segundaDiv.id = 'segunda';
-            
-            // Crear el párrafo dentro del segundo div
-            var parrafo = document.createElement('p');
-            parrafo.textContent = 'Este es el segundo texto';
-            segundaDiv.appendChild(parrafo);
-            
-            // Agregar los divs al body
-            document.body.appendChild(primeraDiv);
-            document.body.appendChild(segundaDiv);
+           
+            return `<div id="primera">
+                    Este es el primer texto
+                    </div>
+                    <div id="segunda">
+                    <p>Este es el segundo</p>
+                    </div>`;
         }
-
+        console.log(crearEstructura());
         // Llamar a la función para crear la estructura
-        crearEstructura();
+        const cuerpo = document.querySelector('.cuerpo');
+        cuerpo.innerHTML = crearEstructura();
     </script>
 </body>
 </html>
