@@ -22,6 +22,8 @@ async function getPersonajes() {
     }
 }
 
+
+
 function crearCard(personaje) {
 
     const tieneTransformaciones = personaje.transformations && personaje.transformations.length > 0;
@@ -50,6 +52,14 @@ function renderizarPersonajes(personajes){
 async function iniciarApp(){
   
     const buscador=document.querySelector('.buscador');
+    const todos=document.getElementById('todos');
+    const filtroHumans=document.getElementById('humanos');
+    const filtroSaiyans = document.getElementById('saiyans');
+    const filtroNamekians = document.getElementById('namekian');
+    const filtroMajin = document.getElementById('majin');
+    const filtroDioses = document.getElementById('dioses');
+
+    
     let personajes=[];
 
     try {
@@ -57,16 +67,52 @@ async function iniciarApp(){
         personajes=data.items;
         renderizarPersonajes(personajes);
 
+        // Listener para el input buscador, filtra por el nombre que introduzcamos o letras que incluya
         buscador.addEventListener('input',()=>{
             const busqueda=buscador.value.toLowerCase();
             const personajesFiltrados=personajes.filter(personaje => 
                 personaje.name.toLowerCase().includes(busqueda)
             );
+            console.log({ personajesFiltrados })
             renderizarPersonajes(personajesFiltrados);
         })
 
+        // Boton para mostrar todos 
+        todos.addEventListener('click',()=>{
+            personajes = data.items;
+            renderizarPersonajes(personajes);
+        });
+
+
+        // por filtros
+        filtroSaiyans.addEventListener('click', () => {
+            const personajesFiltradosSaiyan = personajes.filter(personaje => personaje.race === 'Saiyan');
+            
+            renderizarPersonajes(personajesFiltradosSaiyan);
+        });
+
+        filtroNamekians.addEventListener('click', () => {
+            const personajesFiltradosNamek = personajes.filter(personaje => personaje.race === 'Namekian');
+         
+            renderizarPersonajes(personajesFiltradosNamek);
+        });
+
+        filtroMajin.addEventListener('click', () => {
+            const personajesFiltradosMajin = personajes.filter(personaje => personaje.race === 'Majin');
+            renderizarPersonajes(personajesFiltradosMajin);
+        });
+
+        filtroDioses.addEventListener('click', () => {
+            const personajesFiltradosGod = personajes.filter(personaje => personaje.race === 'God');
+            renderizarPersonajes(personajesFiltradosGod);
+        });
+        filtroHumans.addEventListener('click', () => {
+            const personajesFiltradosHuman = personajes.filter(personaje => personaje.race === 'Human');
+            renderizarPersonajes(personajesFiltradosHuman);
+        });
+
     } catch (error) {
-        console.log("puta")
+        console.log("error en carga")
     }
 }
 
