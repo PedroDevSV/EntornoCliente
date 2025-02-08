@@ -12,21 +12,39 @@
             <img src="assets/letra.png" alt="" id="logo">
         </div>
       <div class="filtrosContainer">
-            <input type="text" class="buscador" placeholder="">
+            <input type="text" class="buscador" placeholder="Buscar por nombre">
       </div>
       <div class="botonesContainer">
         <button id="todos" class="botones" value="todos">Mostrar todos</button>
         <button class="botones" id="humanos" value="Human">Humanos</button>
         <button class="botones" id="saiyans" value="Saiyan">Saiyans</button>
-        <button class="botones" id="namekian" value="Namekian">Namekianos</button>
+        <button class="botones" id="friezer" value="Namekian">Tropa Friezer</button>
         <button class="botones" id="majin" value="Majin">Majin</button>
         <button class="botones" id="dioses" value="God">Dioses</button>
+        <button class="botones" id="sorpresa"  >???</button>
       </div>
     </div>
     <div class="container">
         <div id="grid-personajes" class="grid-personajes"></div>
     </div>
-    
+    <!-- flotante -->
+     <div class="floating-container">
+        <button class="bg-button">
+            <img src="assets/ball.png" alt="">
+        </button>
+        <div class="bg-menu">
+            <!-- data guarda info en html, variable background -->
+            <div class="bg-option" data-background="fondo1.jpg">
+                <img src="assets/bg/fondo1.jpg" alt="">
+            </div>
+            <div class="bg-option" data-background="fondo2.jpg">
+                <img src="assets/bg/fondo2.jpg" alt="">
+            </div>
+            <div class="bg-option" data-background="fondo3.jpg">
+                <img src="assets/bg/fondo3.jpg" alt="">
+            </div>
+        </div>
+     </div>
     <script src="app.js"></script>
 </body>
 </html>
